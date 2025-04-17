@@ -53,6 +53,8 @@ body {
   margin: 0 11rem;
 }
 
+
+
 /* Header
 ==================*/
 .header {
@@ -60,14 +62,14 @@ body {
   background-color: #222222;
   position: sticky;
   top: 0;
-  /* Шапка будет оставаться прикрепленной к верхней части */
+
   z-index: 100;
-  /* Для того чтобы шапка была сверху */
+
   transition: background-color 0.3s ease;
-  /* Плавный переход фона */
+
 }
 
-/* Контейнер для содержимого шапки */
+
 .header__container {
   display: flex;
   gap: 12.8rem;
@@ -76,7 +78,7 @@ body {
   text-align: center;
 }
 
-/* Логотип */
+
 .header__logo {
   font-family: var(--font-accent);
   font-size: 2.5rem;
@@ -120,56 +122,50 @@ body {
 
 .header__burger {
   display: none;
-  /* Скрыто по умолчанию */
+
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 20px;
   cursor: pointer;
   z-index: 101;
-  /* Чтобы оно было поверх всего */
+
   position: fixed;
-  top: 1.9rem;
+  top: 1.76rem;
   right: 1rem;
 }
 
-/* Затемнение фона при прокрутке */
+
 .header.sticky {
   background-color: rgba(0, 0, 0, 0.8);
-  /* Затемнение фона */
 }
 
-/* Линии гамбургера */
+
 .header__burger-line {
   width: 100%;
   height: 3px;
   background-color: var(--text-color);
-  /* Цвет текста */
   transition: var(--transition);
-  /* Плавный переход */
+
 }
 
-/* Когда гамбургер активен (при открытии меню) */
+
 .header__burger.active .header__burger-line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
-  /* Первая линия превращается в верхнюю часть крестика */
 }
 
 .header__burger.active .header__burger-line:nth-child(2) {
   opacity: 0;
-  /* Вторая линия исчезает */
 }
 
 .header__burger.active .header__burger-line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-  /* Третья линия превращается в нижнюю часть крестика */
 }
 
-/* Мобильная версия — показываем гамбургер */
+
 @media screen and (max-width: 768px) {
   .header__burger {
     display: flex;
-    /* Показать гамбургер на мобильных устройствах */
   }
 }
 
@@ -242,6 +238,7 @@ body {
 
 .btn {
   display: inline-block;
+  text-align: center;
   font-family: var(--font-bold);
   font-weight: 700;
   font-size: 1.5rem;
@@ -274,21 +271,22 @@ body::before {
   pointer-events: none;
 }
 
-/* WebP */
+
 @supports (background-image: url("image/home-side.webp")) {
   body::before {
     background-image: url("../image/home-side.webp");
   }
 }
 
-/* AVIF */
+
 @supports (background-image: url("image/home-side.avif")) {
   body::before {
     background-image: url("../image/home-side.avif");
   }
 }
 
-/* features */
+/* Feature
+==================*/
 .section-features {
   background-color: #282829;
   padding: 5rem 0;
@@ -444,7 +442,6 @@ body::before {
   transition: opacity 0.2s ease-in-out;
 }
 
-/* Галочка появляется, когда input:checked */
 .custom-checkbox__input:checked+.custom-checkbox::after {
   opacity: 1;
 }
@@ -636,7 +633,8 @@ body::before {
   .btn {
     font-size: 1.3rem;
     padding: 1.8rem 2.5rem;
-    width: auto;
+    width: 100%;
+    text-align: center;
   }
 
   .btn-spacing {
